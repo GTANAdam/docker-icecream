@@ -1,6 +1,8 @@
 # docker-icecream
 Dockerized images of icecream distributed compiler with their docker-compose files
 
+**Important**: Due to some docker networking limitations in windows, docker-icecream broadcasting will not function correctly.
+
 ## Usage
 ### Daemon ([adambh/docker-iceccd](https://hub.docker.com/r/adambh/docker-iceccd))
 The daemon images is based on Clearlinux so as to enjoy performance out of the optimized distribution
