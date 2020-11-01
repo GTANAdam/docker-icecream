@@ -1,8 +1,8 @@
 version: '2.2'
 services:
   iceccd: 
-    image: iceccd
-    container_name: iccecd
+    image: adambh/docker-iceccd
+    container_name: iceccd
     restart: always
     ports:
       - 10245
