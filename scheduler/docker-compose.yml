@@ -1,0 +1,13 @@
+version: '2.2'
+services:
+  icecc-scheduler: 
+    image: icecc-scheduler
+    container_name: icecc-scheduler
+    restart: always
+    ports:
+      - 8765
+    network_mode: "host"
+    # cpuset: "0"
+    # cpu_percent: 100
+    # logging:
+    #   driver: "none"

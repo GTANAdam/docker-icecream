@@ -1,0 +1,15 @@
+version: '2.2'
+services:
+  iceccd: 
+    image: iceccd
+    container_name: iccecd
+    restart: always
+    ports:
+      - 10245
+      - 8765
+      - 8766
+    network_mode: "host"
+    # cpuset: "0"
+    # cpu_percent: 100
+    # logging:
+    #   driver: "none"

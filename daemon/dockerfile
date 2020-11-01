@@ -1,0 +1,10 @@
+FROM clearlinux:latest
+RUN swupd bundle-add icecream
+
+# Run icecc daemon in verbose mode
+ENTRYPOINT ["iceccd", "-n", "central-icecc-scheduler", "-v"]
+# If no-args passed, make very verbose
+CMD ["-vv"]
+
+# iceccd port
+EXPOSE 10245 8765 8766
