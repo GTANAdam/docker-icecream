@@ -11,12 +11,12 @@ docker run --net=host -p ::10245 -p ::8766 -p ::8765 adambh/docker-iceccd
 ### Scheduler ([adambh/docker-icecc-scheduler](https://hub.docker.com/r/adambh/docker-icecc-scheduler))
 There are 2 flavors of this image, in Clearlinux and in Alpine, the former favors performance and the latter size.
 
-#### Clearlinux
+#### - Clearlinux
 ```
 docker run --net=host -p ::8765 adambh/docker-icecc-scheduler:latest
 ```
 
-#### Alpine
+#### - Alpine
 ```
 docker run --net=host -p ::8765 adambh/docker-icecc-scheduler:alpine
 ```
