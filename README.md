@@ -2,7 +2,7 @@
 Dockerized images of icecream distributed compiler with their docker-compose files
 
 ## Usage
-### Daemon ([adambh/docker-iceccd](https://hub.docker.com/r/adambh/docker-icecdd))
+### Daemon ([adambh/docker-iceccd](https://hub.docker.com/r/adambh/docker-iceccd))
 The daemon images is based on Clearlinux so as to enjoy performance out of the optimized distribution
 ```
 docker run --net=host -p ::10245 -p ::8766 -p ::8765 adambh/docker-iceccd
