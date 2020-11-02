@@ -1,8 +1,6 @@
 # docker-icecream
 Dockerized images of icecream distributed compiler with their docker-compose files
 
-**Important**: Due to some [docker networking limitations in windows](https://docs.docker.com/docker-for-windows/networking/#known-limitations-use-cases-and-workarounds), docker-icecream broadcasting will not function correctly.
-
 ## Usage
 ### Daemon ([adambh/docker-iceccd](https://hub.docker.com/r/adambh/docker-iceccd))
 The daemon images is based on Clearlinux so as to enjoy performance out of the optimized distribution
@@ -23,3 +21,19 @@ docker run --net=host -p ::8765 adambh/docker-icecc-scheduler:latest
 docker run --net=host -p ::8765 adambh/docker-icecc-scheduler:alpine
 ```
 
+## Troubleshooting
+### Scheduler is not automatically reachable when running a daemon on Windows:
+This is a known [limitation](https://docs.docker.com/docker-for-windows/networking/#known-limitations-use-cases-and-workarounds) of Docker on Windows, but this can be workedaround by manually setting the IP Address of the scheduler via environment variables, for example:
+
+**Note**: Replace 192.168.1.12 with your scheduler's IP address.
+
+```
+docker run --net=host -p ::10245 -p ::8766 -p ::8765 -e USE_SCHEDULER=192.168.1.12 adambh/docker-iceccd
+```
+
+or by appending environment variable to **docker-compose.yml**:
+
+```
+environment:
+  - USE_SCHEDULER=192.168.1.12 # Replace with the scheduler's IP address
+```
