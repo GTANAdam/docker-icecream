@@ -1,7 +1,7 @@
 # docker-icecream
 Dockerized images of icecream distributed compiler with their docker-compose files
 
-**Important**: Due to some docker networking limitations in windows, docker-icecream broadcasting will not function correctly.
+**Important**: Due to some [docker networking limitations in windows](https://docs.docker.com/docker-for-windows/networking/#known-limitations-use-cases-and-workarounds), docker-icecream broadcasting will not function correctly.
 
 ## Usage
 ### Daemon ([adambh/docker-iceccd](https://hub.docker.com/r/adambh/docker-iceccd))
