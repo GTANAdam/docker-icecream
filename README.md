@@ -37,3 +37,6 @@ or by appending environment variable to **docker-compose.yml**:
 environment:
   - USE_SCHEDULER=192.168.1.12 # Replace with the scheduler's IP address
 ```
+
+### I've done the prior workaround but I am still getting `` failed to accept an incoming connection on [MY IP]:10245``
+Yeah well, the prior workaround was half of the solution, it is rather better to create a VPN between the scheduler and the daemon then bridge it to the same docker network.
