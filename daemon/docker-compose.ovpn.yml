@@ -1,0 +1,23 @@
+version: '2.2'
+services:
+  vpn:
+    image: dperson/openvpn-client
+    restart: always
+    cap_add:
+     - NET_ADMIN
+    volumes:
+      - ./vpn:/vpn
+
+  iceccd: 
+    image: adambh/docker-iceccd
+    container_name: iceccd
+    restart: always
+    depends_on:
+      - vpn
+    network_mode: "service:vpn"
+    environment:
+      - USE_SCHEDULER=172.26.0.3
+    # cpuset: "0"
+    # cpu_percent: 100
+    # logging:
+    #   driver: "none"

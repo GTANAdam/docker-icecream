@@ -1,0 +1,20 @@
+version: '2.2'
+services:
+  icecc-scheduler: 
+    image: adambh/docker-icecc-scheduler
+    container_name: icecc-scheduler
+    restart: always
+    network_mode: "service:openvpn"
+    depends_on:
+      - openvpn
+    
+  openvpn:
+    image: kylemanna/openvpn
+    container_name: icecc-openvpn
+    restart: always
+    cap_add:
+     - NET_ADMIN
+    ports:
+     - "1194:1194/udp"
+    volumes:
+     - ./openvpn-data/conf:/etc/openvpn
