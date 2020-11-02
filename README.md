@@ -40,4 +40,5 @@ environment:
 
 ### I've done the prior workaround but I am still getting `` failed to accept an incoming connection on [MY IP]:10245``
 Yeah well, the prior workaround was half of the solution, it is rather better to create a VPN between the scheduler and the daemon then bridge it to the same docker network.
+
 You can check the docker-compose.ovpn.yml examples for both the scheduler and daemon.
